@@ -1,10 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-interface Show {
-  id: number;
-  name: string;
-  summary: string;
-}
+import { Show } from '../types';
 
 interface ShowState {
   searchResults: Show[];
