@@ -15,9 +15,17 @@ const ShowDetails = () => {
     return <div>Loading...</div>;
   }
   return (
-    <div>
-      <h1>{selectedShow.name}</h1>
-      <p>{selectedShow.summary}</p>
+    <div style={{display: 'flex', alignItems: 'flex-start', paddingLeft: '10%'}}>
+      {selectedShow.image && selectedShow.image.medium && (
+        <img
+          src={selectedShow.image.medium}
+          alt={selectedShow.name}
+        />
+      )}
+      <div style={{padding: '0px 10% 0px 10px'}}>
+        <h1>{selectedShow.name}</h1>
+        <p dangerouslySetInnerHTML={{__html: selectedShow.summary}}/>
+      </div>
     </div>
   );
 };
