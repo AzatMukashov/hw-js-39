@@ -1,18 +1,18 @@
-import './App.css'
-import SearchBar from './components/SearchBar/SearchBar.tsx';
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import ShowDetails from './components/ShowDetails/ShowDetails.tsx';
-import { Provider } from 'react-redux';
-import { store } from './app/store.ts';
+import "./App.css";
+import SearchBar from "./components/SearchBar/SearchBar.tsx";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import ShowDetails from "./components/ShowDetails/ShowDetails.tsx";
+import { Provider } from "react-redux";
+import { store } from "./app/store.ts";
 
 const App = () => {
   return (
     <Provider store={store}>
-      <Router future={{v7_startTransition: true, v7_relativeSplatPath: true}}>
+      <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <div>
-          <SearchBar/>
+          <SearchBar />
           <Routes>
-            <Route path="/shows/:id" element={<ShowDetails/>}/>
+            <Route path="/shows/:id" element={<ShowDetails />} />
           </Routes>
         </div>
       </Router>
@@ -20,4 +20,4 @@ const App = () => {
   );
 };
 
-export default App
+export default App;
